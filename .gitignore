@@ -1,0 +1,11 @@
+# intelij folders
+.idea
+
+# 3rd party folders
+node_modules
+
+# tests generated folders
+coverage
+
+# build generated folders
+build
