@@ -1,9 +1,10 @@
 {
-  "name": "SportBuffTest",
-  "version": "1.0.0",
+  "name": "sportbufftest",
+  "version": "0.1.0",
   "description": "SportBuff Frontend Dev Test",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "browser": "dist/index.min.js",
   "files": [
     "dist"
   ],
@@ -17,7 +18,8 @@
     "test": "mocha -r ts-node/register",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test --  --coverage",
-    "dev-server": "http-server -c-1"
+    "dev-server": "http-server -c-1",
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -50,6 +52,10 @@
     "mocha": "^8.2.1",
     "node-sass": "^5.0.0",
     "postcss-loader": "^4.1.0",
+    "rollup": "^2.35.1",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass-loader": "^10.1.0",
     "sinon": "^9.2.2",
     "sinon-chai": "^3.5.0",

@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config = {
   target: 'web',
   entry: {
-    index: './src/index.ts',
+    index: './src/SportBuffLib.ts',
   },
   output: {
     path: path.resolve(__dirname, './dist'),

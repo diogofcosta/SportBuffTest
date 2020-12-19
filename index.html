@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="dist/index.min.js"></script>
 
         <title>SportBuff Frontend Dev Test Diogo Costa</title>
     </head>
@@ -18,26 +19,16 @@
             </video>
         </div>
 
-        <button id="myButton" type="button">Click Me!</button>
-
-        <script src="dist/index.js"></script>
         <script>
-          SportBuffLib.start.then(function(animal) {
-            document.querySelector('#imageSrc').textContent = animal.imageSrc
-            document.querySelector('#text').textContent = animal.text
-          })
-        </script>
+          document.addEventListener("DOMContentLoaded", () => {
+            console.log('what is love??? baby dont hurt me!');
+            console.log(SportBuffLib);
+            SportBuffLib.SportBuffLib.start('sportbuff-video-wrapper');
 
-        <script>
-            const { start } = window.SportBuffLib;
-
-            console.log('is this working??');
-
-            console.log(start);
-            console.log('where is the button?');
-            console.log(document.querySelector('#myButton'));
-
-            document.querySelector('#myButton').addEventListener('click', start);
+            const code = document.createElement("code");
+            code.textContent = 'just a test!';
+            document.body.appendChild(code);
+          });
         </script>
     </body>
 </html>
