@@ -8,4 +8,4 @@ node_modules
 coverage
 
 # build generated folders
-build
+dist
