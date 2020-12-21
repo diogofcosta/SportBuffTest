@@ -1,5 +1,16 @@
 # Buff UP LTD JS/TypeScript Dev. Test
 
+# How to test:
+
+Clone the repo, run npm install.
+
+There's a few scripts available:
+
+- npm run test (runs the available tests) using Mocha, Sinon and Chai
+- npm run start:dev (builds the package in development mode and on watch mode for changes)
+- npm run dev-server (run this after a build of the package, to have the files available on dist) will run a simple http server that serves index.html file that uses the npm package to start and fetch a buff (id = 1) at the moment and serves it on a transparent layer over the video player. Missing styles and some additional logic UI logic still
+
+
 # The Task:
 
 Create a JS/TypeScript library using our Rest API to show content of top of an HTML 5 Video Player
