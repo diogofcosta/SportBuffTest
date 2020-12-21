@@ -4,7 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="dist/index.min.js"></script>
+        <link rel="stylesheet" href="dist/style.css">
+        <script src="dist/index.js"></script>
 
         <title>SportBuff Frontend Dev Test Diogo Costa</title>
     </head>
@@ -12,22 +13,14 @@
     <body>
         <h1>Hello SportBuff! :) from Diogo</h1>
 
-        <div id="sportbuff-video-wrapper">
-            <video width="1024" height="576" controls>
-                <source src="https://buffup-public.s3.eu-west-2.amazonaws.com/video/toronto+nba+cut+3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <video id="sport-buff-player" width="1024" height="576" controls>
+            <source src="https://buffup-public.s3.eu-west-2.amazonaws.com/video/toronto+nba+cut+3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            console.log('what is love??? baby dont hurt me!');
-            console.log(SportBuffLib);
-            SportBuffLib.SportBuffLib.start('sportbuff-video-wrapper');
-
-            const code = document.createElement("code");
-            code.textContent = 'just a test!';
-            document.body.appendChild(code);
+            SportBuffLib.SportBuffLib.start('sport-buff-player');
           });
         </script>
     </body>

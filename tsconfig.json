@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "typeRoots": ["@types", "./node_modules/@types"],
-    "module": "commonjs",
+    "module": "es2015",
     "target": "es5",
     "lib": ["ESNext", "dom"],
     "baseUrl": "./",
@@ -18,8 +18,16 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    // this enables stricter inference for data properties on `this`
+    "strict": true
+  },
+  "paths": {
+    "@/*": [
+      "src/*"
+    ]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "test"]
+  "exclude": ["node_modules", "dist", "test"],
+  "files": [ "vue-shim.d.ts" ]
 }

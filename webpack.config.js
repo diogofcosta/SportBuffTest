@@ -1,14 +1,15 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const config = {
   target: 'web',
   entry: {
-    index: './src/SportBuffLib.ts',
+    index: './src/SportBuffLib.ts'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'index.js',
+    filename: "[name].js",
     library: 'SportBuffLib',
     libraryTarget: 'umd',
     globalObject: 'this',
@@ -19,8 +20,9 @@ const config = {
     ignored: /node_modules/,
   },
   plugins: [
+    new VueLoaderPlugin(),
     new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false,
+      cleanStaleWebpackAssets: true,
       cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, './dist')],
     }),
   ],
@@ -41,23 +43,22 @@ const config = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',
           {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: 'postcss.config.js',
-              },
-            },
+            loader: 'file-loader',
+            options: { name: 'style.css'}
           },
-
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js', '.css', '.scss', '.vue'],
+    alias: { vue: 'vue/dist/vue.esm.js' }
   },
 };
 

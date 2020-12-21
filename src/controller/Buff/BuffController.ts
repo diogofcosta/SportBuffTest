@@ -10,16 +10,14 @@ export default class BuffController implements IBuffController {
   }
 
   async getBuff(id: number): Promise<Buff> {
-    try {
-      const buff = await this.buffService.getBuff(id);
+    const buff = await this.buffService.getBuff(id);
 
-      if (!buff) {
-        throw new Error('Buff not found');
-      }
-
-      return buff;
-    } catch (err) {
-      throw new Error(`Error - ${err}`);
+    // if we don't find buffs do we throw an error? for now our service that communicates with the API either returns
+    // a Buff instance or a null in case something went wrong (didnt find it or any other error)
+    if (!buff) {
+      throw new Error('Buff not found');
     }
+
+    return buff;
   }
 }

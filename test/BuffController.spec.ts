@@ -22,15 +22,13 @@ describe('BuffController', () => {
         buffController = new BuffController(buffServiceStub);
     });
 
-    describe('BuffController', () => {
-       it('should return error when no buff is returned from API', async () => {
-           buffServiceStub.getBuff.withArgs(buffId).resolves(undefined);
+    it('should return error when no buff is returned from API', async () => {
+        buffServiceStub.getBuff.withArgs(buffId).resolves(undefined);
 
-           const promise = buffController.getBuff(buffId);
+        const promise = buffController.getBuff(buffId);
 
-           sinon.assert.calledOnceWithExactly(buffServiceStub.getBuff, buffId);
-           const err = await expect(promise).to.eventually.be.rejected;
-           expect(err.message).to.equal('potatoes');
-       });
+        sinon.assert.calledOnceWithExactly(buffServiceStub.getBuff, buffId);
+        const err = await expect(promise).to.eventually.be.rejected;
+        expect(err.message).to.equal('Buff not found');
     });
 });
